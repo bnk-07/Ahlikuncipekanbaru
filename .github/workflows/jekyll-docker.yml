@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahli Kunci 13 Pekanbaru - Spesialis Kunci Rumah & Mobil</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --dark: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --glow: 0 0 25px rgba(255, 204, 0, 0.5);
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--dark);
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        .bg-animate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #050505 100%);
+            z-index: -2;
+        }
+
+        .spinning-key {
+            display: inline-block;
+            animation: spin3d 3s infinite linear;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-right: 12px;
+            filter: drop-shadow(var(--glow));
+        }
+        @keyframes spin3d {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .navbar {
+            padding: 20px 0;
+            transition: 0.5s;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .navbar.scrolled {
+            background: rgba(0,0,0,0.9) !important;
+            backdrop-filter: blur(15px);
+            padding: 12px 0;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Service Cards --- */
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px 35px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+        .icon-box {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 10px rgba(255,204,0,0.3));
+        }
+
+        /* --- Portfolio Grid --- */
+        .portfolio-card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 350px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .portfolio-card img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.6s;
+        }
+        .portfolio-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 25px; opacity: 0; transition: 0.4s;
+        }
+        .portfolio-card:hover img { transform: scale(1.1); }
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+        /* --- Maps & Contact --- */
+        .contact-info-box {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 30px;
+            height: 100%;
+        }
+        .map-frame {
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            box-shadow: var(--glow);
+            background: #111;
+        }
+
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white;
+            padding: 18px 30px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            z-index: 999; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            display: flex; align-items: center; gap: 10px;
+        }
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 5px;
+            background: var(--primary); z-index: 10000; width: 0%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    <div class="bg-animate"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-key spinning-key"></i>KUNCI13<span style="color: var(--primary)">PEKANBARU</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-600" style="font-size: 0.85rem; letter-spacing: 1px;">
+                    <li class="nav-item"><a class="nav-link px-3" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#gallery">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#lokasi">Lokasi</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-warning rounded-pill px-4 fw-bold" href="tel:0811752613">Call Center</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9" data-aos="fade-right">
+                    <h5 class="text-warning fw-bold mb-4" style="letter-spacing: 4px;">AHLI KUNCI PANGGILAN 24 JAM</h5>
+                    <h1 class="hero-title mb-4">Layanan Kunci <br><span class="text-gradient">Rumah & Mobil</span></h1>
+                    <p class="lead text-white-50 mb-5" style="max-width: 650px; line-height: 1.8;">Solusi cepat untuk kunci rumah hilang, pintu terkunci dari dalam, ganti silinder kunci, hingga duplikat kunci immobilizer mobil. Teknisi profesional langsung datang ke lokasi Anda.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://wa.me/62811752613" class="btn btn-warning btn-lg rounded-pill px-5 py-3 fw-bold shadow">HUBUNGI SEKARANG</a>
+                        <a href="#gallery" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3">HASIL KERJA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 fw-800">Layanan <span class="text-warning">Utama</span></h2>
+                <div class="mx-auto bg-warning" style="height: 5px; width: 70px; border-radius: 10px;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card text-center">
+                        <div class="icon-box"><i class="fas fa-home"></i></div>
+                        <h4 class="fw-bold">KUNCI RUMAH</h4>
+                        <p class="text-white-50">Buka pintu rumah macet, kunci hilang, ganti silinder kunci (Lockcase), dan duplikat berbagai jenis kunci pintu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card text-center">
+                        <div class="icon-box"><i class="fas fa-car"></i></div>
+                        <h4 class="fw-bold">IMMOBILIZER</h4>
+                        <p class="text-white-50">Duplikat kunci mobil sistem chip/sensor, reset program immobilizer, dan ganti casing remote mobil.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card text-center">
+                        <div class="icon-box"><i class="fas fa-vault"></i></div>
+                        <h4 class="fw-bold">BRANKAS</h4>
+                        <p class="text-white-50">Ahli buka brankas terkunci (lupa kombinasi), perbaikan mekanisme kunci brankas, dan pembuatan kunci baru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-5 bg-black bg-opacity-50">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">Portfolio <span class="text-warning">Pengerjaan</span></h2>
+                <p class="text-white-50">Dokumentasi pengerjaan teknisi profesional kami di lapangan.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 col-6" data-aos="zoom-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=600" alt="Ahli Brankas Pekanbaru">
+                        <div class="portfolio-overlay">
+                            <h5 class="fw-bold">Service Brankas Chubb</h5>
+                            <p class="small text-warning mb-2">Buka & Perbaikan Kombinasi</p>
+                            <a href="https://www.instagram.com/p/DNIFy_chD9v/?igsh=aTgyejFqNjZrdW10" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill">Lihat di Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&w=600" alt="Remote Mobil">
+                        <div class="portfolio-overlay">
+                            <h5 class="fw-bold">Duplikat Remote</h5>
+                            <p class="small text-warning mb-0">Kunci Mobil Immobilizer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-kunci rumah" alt="Ganti Kunci Rumah">
+                        <div class="portfolio-overlay">
+                            <h5 class="fw-bold">Kunci Pintu Utama</h5>
+                            <p class="small text-warning mb-0">Ganti Silinder & Handle Set</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lokasi" class="py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <h2 class="display-6 fw-bold mb-4">Lokasi <span class="text-warning">Workshop</span></h2>
+                    <div class="contact-info-box">
+                        <div class="mb-4">
+                            <h6 class="fw-bold text-warning text-uppercase">Alamat:</h6>
+                            <p>Jl. Pasir Putih (Samping konter), Simpang Tiga, Kec. Bukit Raya, Kota Pekanbaru, Riau.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold text-warning text-uppercase">Operasional:</h6>
+                            <p>Tersedia Layanan Panggilan 24 Jam</p>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold text-warning text-uppercase">WhatsApp:</h6>
+                            <h4 class="fw-bold">0811-752-613</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="zoom-in">
+                    <div class="map-frame">
+                        <iframe 
+                            src="https://maps.app.goo.gl/Usna21XUDZ7UokmK7" 
+                            width="100%" height="450" style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center border-top border-secondary mt-5">
+        <div class="container">
+            <h4 class="fw-bold mb-3">AHLI KUNCI 13 PEKANBARU</h4>
+            <p class="text-white-50">Layanan Ahli Kunci Rumah, Mobil, & Brankas Terpercaya.</p>
+            <p class="small text-muted mb-0">© 2026 Ahli Kunci 13 Pekanbaru. Managed by QERAID.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/62811752613" class="wa-float">
+        <i class="fab fa-whatsapp fs-3"></i>
+        <span>PANGGIL TEKNISI</span>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.onscroll = () => {
+            const nav = document.querySelector('.navbar');
+            const progress = document.getElementById("scroll-progress");
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (winScroll > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+            progress.style.width = (winScroll / height) * 100 + "%";
+        };
+    </script>
+</body>
+</html>
